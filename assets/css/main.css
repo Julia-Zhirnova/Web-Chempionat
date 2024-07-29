@@ -684,3 +684,74 @@ Account
     padding: 5px;
     color:white;
 }
+
+/* Confirm */
+
+.confirm-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.confirm-inputs {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.confirm-inputs textarea {
+    border-radius: 8px;
+}
+    
+.confirm-btn {
+    margin-bottom: 15px;
+}
+
+/* Config */
+
+.config-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 50px 0;
+}
+
+ .config-block {
+    padding: 15px;
+    background-color: var(--second-blue-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+    border-radius: 8px;
+    text-align: center;
+ }
+
+ .config-title {
+    font-size: 21px;
+}
+
+.config-user, .config-phone, .config-people {
+    font-size: 18px;
+}
+
+.config-bio {
+    padding: 5px;
+    background-color: var(--main-blue-color);
+    border-radius: 8px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.config-status {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
