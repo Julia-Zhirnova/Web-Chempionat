@@ -3,7 +3,7 @@
 :root {
     --main-blue-color: #005e92;
     --second-blue-color: #91b8cf;
-    --additional-blue-color: #ffc903;
+    --additional-orange-color: #ffc903;
 }
 
 * {
@@ -61,7 +61,7 @@ input, select {
 }
 
 .btn-orange {
-    background-color: var(--additional-blue-color);
+    background-color: var(--additional-orange-color);
 
     width: 100%;
 
@@ -112,7 +112,7 @@ header {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--additional-blue-color);
+    background-color: var(--additional-orange-color);
 }
 
 .nav a::after {
@@ -462,6 +462,10 @@ header {
 
 /* Subscribe */
 
+.subscribe {
+    padding-bottom: 100px;
+}
+
 .subscribe-wrapper {
     display: flex;
     flex-direction: column;
@@ -524,4 +528,159 @@ footer {
 .footer-nav {
     display: flex;
     gap: 15px;
+}
+
+.footer-contacts a {
+    color: var(--main-blue-color);
+}
+
+@media print {
+    header,
+    footer,
+    .excursions-description,
+    .excursions-bookings,
+    .popularity-ratings,
+    .btn-orange {
+    display: none;
+    }
+
+    img {
+    filter: grayscale(1);
+    }
+}
+
+/* Register */
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    max-width: 500px;
+    
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.register-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.register-inputs input {
+padding: 15px;
+}
+
+.register-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/*
+Account
+*/
+.account-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.account-bio {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.account-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.account-img {
+    max-width: 550px;
+    border-radius: 8px;
+}
+ 
+.account-bio-name {
+    background-color: var(--second-blue-color);
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 8px;
+
+    color:white;
+}
+
+.account-bio-info {
+    background-color: var(--second-blue-color);
+    display: flex;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 10px;
+    color:white;
+}
+
+.account-bio button {
+    background-color: var(--additional-orange-color);
+    margin-top: 10px;
+}
+
+/* History Page */
+
+.history-visit h2, .history-cancel h2,
+.history-bron h2 {
+    font-size: 28px;
+    margin: 25px 0;
+
+    text-align: center;
+}
+
+.history-visit {
+    background-color: #5b7ddb;
+    border-radius: 8px;
+    color: white;
+}
+
+.history-cancel {
+    background-color: #e76060;
+    border-radius: 8px;
+    color:white;
+}
+
+.history-bron {
+    background-color: cadetblue;
+    border-radius: 8px;
+    color:white;
+}
+
+.history {
+    padding-bottom: 100px;
+}
+
+.history-cancel-form {
+    width: 100%;
+}
+ 
+.history-cancel-form input {
+    width: 100%;
+    padding: 5px;
+    color:white;
 }
