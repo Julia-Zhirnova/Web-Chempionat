@@ -1,0 +1,527 @@
+@import url('./fonts.css');
+
+:root {
+    --main-blue-color: #005e92;
+    --second-blue-color: #91b8cf;
+    --additional-blue-color: #ffc903;
+}
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto Regukar';
+
+    transition: all 0.5s ease-in-out;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+
+    font-size: 26px;
+}
+
+section {
+    padding-top: 100px;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+input, select {
+    border: none;
+    border-bottom: 2px solid var(--main-blue-color);
+
+    outline: none;
+    font-size: 16px;
+}
+
+.input:hover {
+    border-bottom: 2px solid var(--second-blue-color);
+}
+
+.btn-orange {
+    background-color: var(--additional-blue-color);
+
+    width: 100%;
+
+    font-family: "Roboto Medium";
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    display: block;
+}
+
+.btn-orange:hover {
+    background-color: var(--second-blue-color);
+}
+
+/* Header */
+
+header {
+    padding: 30px 0;
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.nav a {
+    font-size: 16px;
+    font-family: 'Roboto Medium';
+
+    color: var(--main-blue-color);
+
+    position: relative;
+}
+
+.nav a::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -5px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--additional-blue-color);
+}
+
+.nav a::after {
+    width: 0;
+    transition: 0.5s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.nav a:hover {
+    color: var(--second-blue-color);
+}
+
+/* Popularity */
+
+.popularity-block {
+    display: flex;
+    margin-top: 50px;
+    border-radius: 8px;
+    gap: 15px;
+    padding: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+
+.popularity-img img {
+    max-width: 550px;
+    border-radius: 8px;
+}
+
+.popularity-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popularity-cyrcles {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.popularity-ratings {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.popularity-ratings p {
+    font-size: 12px;
+}
+
+.popularity-rating {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popularity-cyrcle-right {
+    display: flex;
+    gap: 5px;
+}
+
+.popularity-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.popularity-cyrcle {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+    margin-bottom: 15px;
+
+    background-color: var(--main-blue-color);
+}
+
+.popularity-cyrcle:hover {
+    background-color: var(--main-blue-color);
+}
+
+.popularity-cyrcle-noactive {
+    background-color: var(--second-blue-color);
+}
+
+/* Authorisation */
+
+.authorization-wrapper {
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 15px;
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    padding: 10px;
+    border-radius: 8px;
+
+    margin-top: 50px;
+}
+
+.authorization-inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.authorization-inputs input {
+    padding: 15px;
+}
+
+.authorization-wrapper a {
+    font-size: 16px;
+    margin-top: 16px; 
+}
+
+.authorization-wrapper a:hover {
+    background-color: var(--second-blue-color); 
+}
+
+/* About */
+
+.about-wrapper {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.slogan {
+    text-align: center;
+    background-color: var(--main-blue-color);
+    padding: 25px;
+    color: white;
+
+    border-radius: 8px;
+    max-width: 450px;
+}
+
+.slogan-text {
+    font-size: 32px;
+    font-family: 'Roboto Bold';
+}
+
+.slogan-description {
+    margin-top: 25px;
+    background-color: var(--second-blue-color);
+    color: white;
+    font-size: 18px;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.about-info {
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--second-blue-color);
+    font-size: 16px;
+
+    max-width: 450px;
+    color: white;
+}
+
+.about-title {
+    font-size: 32px;
+    text-align: center;
+
+    margin-bottom: 25px;    
+}
+
+.about-description {
+    font-size: 18px;
+    padding: 25px;
+    background-color: var(--main-blue-color);
+    color: white;
+    border-radius: 8px;
+}
+
+/* Excursion */
+
+.excursions-wrapper {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+}
+
+.excursions-block {
+    display: flex;
+
+    gap: 15px;
+    padding: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    border-radius: 8px;
+    align-items: center;
+}
+
+.excursions-title {
+    font-size: 28px;
+    font-family: 'Roboto Medium';
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.excursions-img {
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.excursions-description {
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.excursion-bookings {
+    font-size: 18px;
+    margin-top: 15px;
+    background-color: var(--second-blue-color);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+/* Search */
+
+.search-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 650px;
+    margin: 0 auto;
+    gap: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    padding: 10px;
+    border-radius: 8;
+    margin-top: 50px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 100%;
+}
+
+.search-form input {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.search-btn{
+    margin-top: 25px;
+}
+
+/* Testimonials */
+.testimonials-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: nowrap;
+    gap: 15px;
+}
+
+.testimonials-block {
+    max-width: 450px;
+    background-color: var(--second-blue-color);
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+
+    color:white;
+    opacity: 0.5;
+    cursor: pointer;
+
+    filter: blur(3px);
+}
+
+.testimonials-block:hover {
+    transform: scale(1.05);
+    filter: blur(0px);
+    opacity: 0.89;
+}
+
+.testimonials-block-active {
+    transform: scale(1.1);
+    filter: blur(0px);
+    opacity: 1;
+}
+
+.testimonials-img img {
+    max-width: 330px;
+    border-radius: 8px;
+}
+
+ .testimonials-info {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.testimonials-author h2 {
+    font-size: 24px;
+    font-Family: 'Roboto Medium';
+}
+
+.testimonials-text {
+    background-color: var(--main-blue-color);
+    padding: 5px;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.testimonials-down {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testimonials-btn {
+    width: 45%;
+}
+
+/* Subscribe */
+
+.subscribe-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    max-width: 650px;
+    margin: 0 auto;
+    gap: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.subscribe-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.subscribe-form input {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.subscribe-btn {
+    margin-top: 25px;
+}
+
+/* Footer */
+
+footer {
+    background-color: Black;
+    padding: 50px 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contacts, .footer-nav a {
+    color: var(--second-blue-color);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+}
