@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 const Register = () => {
-    const api = 'http://zimin404.beget.tech/api-file/registration'
+    const api = 'http://ushka6y7.beget.tech/api/registration'
 
-    const [firstName, setFirstName] = useState([])
-    const [lastName, setLastName] = useState([])
+    const [first_name, setFirstName] = useState([])
+    const [last_name, setLastName] = useState([])
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([])
 
     // Создание состояний под ошибки
-    const [errorFirstName, setErrorFirstName] = useState('')
+ /*   const [errorFirstName, setErrorFirstName] = useState('')
     const [errorLastName, setErrorLastName] = useState('')
     const [errorEmail, setErrorEmail] = useState('')
-    const [errorPassword,setErrorPassword] = useState('')
+    const [errorPassword,setErrorPassword] = useState('') */
 
 
     const signUp = async (element) => {
@@ -23,8 +23,8 @@ const Register = () => {
         const bodyJson = JSON.stringify({ 
             email,
             password,           
-            firstName: firstName,
-            lastName: lastName})
+            first_name: first_name,
+            last_name: last_name})
     
         const bodyHeaders = {
             method: 'POST',
@@ -38,12 +38,12 @@ const Register = () => {
 
         console.log(dataFetch)
 
-        if (dataFetch.message) {
+       /* if (dataFetch.message) {
             setErrorFirstName(dataFetch.message?.first_name ?? '')
             setErrorLastName(dataFetch.message?. last_name ?? '')
             setErrorEmail(dataFetch.message?. email ?? '')
             setErrorPassword(dataFetch.message?. password ?? '')
-        }
+        } */
 }
 
     return (
@@ -52,38 +52,40 @@ const Register = () => {
     
     <h1>Регистрация</h1>
         <form className="registration card" onSubmit={signUp}>
+            
             <label>Фамилия
                 <input type="text"
-                onChange={element => setLastName(element.target.value)}/>
+                
+               onChange={element => setLastName(element.target.value)} /> 
             </label>
             {
-            errorLastName &&
-            <p> {errorLastName}</p>
+         /*    errorLastName &&
+            <p> {errorLastName}</p> */
             }
             <label>Имя
                 <input type="text"
-                onChange={element => setFirstName(element.target.value)}/>
+                onChange={element => setFirstName(element.target.value)} />
             </label>
             {
-            errorFirstName &&
-            <p> {errorFirstName}</p>
+         /*    errorFirstName &&
+            <p> {errorFirstName}</p> */
             }
             <label>Почта
                 <input type="email"
-                onChange={element => setEmail(element.target.value)}/>
+                onChange={element => setEmail(element.target.value)} />
             </label>
             {
-            errorEmail &&
-            <p> {errorEmail}</p>
+         /*    errorEmail &&
+            <p> {errorEmail}</p> */
             }
             <label>Пароль
                 <input type="password"
-                onChange={element => setPassword(element.target.value)}/>
+                 onChange={element => setPassword(element.target.value)} />
             </label>
             {
-            errorPassword &&
-            <p> {errorPassword}</p>
-            }
+          /*  errorPassword &&
+            <p> {errorPassword}</p> */
+            } 
             <button className="base-button">Зарегистрироваться</button>
         </form>
 

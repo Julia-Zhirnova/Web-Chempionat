@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom'
 
 const Edit = () => {
     const params = useParams('file_id', 'file_name')
-    const token= localStorage.getItem('token')
+    const token= "bNpxTLp617b28kWwoqwPHKuNm7w8tDoToQ2"
 
     const [name,setName] = useState([])
 
     const editName = async (element) => {
         element.preventDefault();
-        const apiUrl = `http://zimin404.beget.tech/api-file/files/${params.file_id}`
+        const apiUrl = `http://ushka6y7.beget.tech/api/files/${params.file_id}`
         
         const bodyJson = JSON.stringify({ name })
 

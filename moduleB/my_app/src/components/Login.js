@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const Login = () => {
     
-    const apiUrl = 'http://zimin404.beget.tech/api-file/authorization'
+    const apiUrl = 'http://ushka6y7.beget.tech/api/authorization'
     
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([])
@@ -32,7 +32,7 @@ const Login = () => {
 
         console.log(dataFetch)
 
-        localStorage.setItem('token', dataFetch.data.token)
+       // localStorage.setItem('token', dataFetch.data.token)
 
         if (dataFetch.message) {            
             setErrorEmail(dataFetch.message?. email ?? '')

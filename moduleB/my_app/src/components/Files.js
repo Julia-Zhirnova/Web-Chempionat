@@ -8,21 +8,23 @@ import { useEffect } from 'react'
 
 const Files = () =>{    
     const [isFiles, setIsFiles] = useState([])
+    const [files,setFiles] = useState([])
 
-    const token = localStorage.getItem('token')
+   // const token = "bNpxTLp617b28kWwoqwPHKuNm7w8tDoToQ2"
 
     const navigate = useNavigate()
 
     const destroyFile = async (element, file_id) => {
         element.preventDefault()
 
-        const apiUrl = `http://zimin404.beget.tech/api-file/files/${file_id}`
+        const apiUrl = `http://ushka6y7.beget.tech/api/files/${file_id}`
         
         const bodyContent = {
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json',
-                Authorization:  'Bearer ${token}',
+               // Authorization:  'Bearer ${token}',
+                Authorization:  'Bearer x3sqT5t46DIZnoiOqqWP5DG95sLRZW9Y7Ll',
             },   
                     
         }
@@ -34,14 +36,43 @@ const Files = () =>{
         
     }
 
-    const getFiles = async (element) => {
-        const apiUrl = 'http://zimin404.begét.tech/api-file/files/disk'
+  /*  const uploadFile = async (element) => {
+        const apiUrl = `http://ushka6y7.beget.tech/api/files/`
+        const bodyJson = JSON.stringify({ 
+            files           
+            })
         
         const bodyContent = {
-            method: 'POST',
+            method: 'post',
             headers:{
                 'Content-Type': 'application/json',
-                Authorization:  'Bearer ${token}',
+               // Authorization:  'Bearer ${token}',
+                Authorization:  'Bearer x3sqT5t46DIZnoiOqqWP5DG95sLRZW9Y7Ll',
+            }, 
+            body: bodyJson,  
+                    
+        }
+        
+        const fetchData = await fetch(apiUrl, bodyContent)
+        const dataFetch = await fetchData.json() 
+
+        console.log(dataFetch)       
+        
+    }*/
+
+
+    const getFiles = async (element) => {
+        const apiUrl = 'http://ushka6y7.beget.tech/api/files/show'
+
+        //const bodyJson = JSON.stringify({ name })
+
+        
+        const bodyContent = {
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json',
+                //Authorization:  'Bearer ${token}',
+                Authorization:  'Bearer x3sqT5t46DIZnoiOqqWP5DG95sLRZW9Y7Ll',
             },            
         }
         
@@ -50,7 +81,8 @@ const Files = () =>{
 
         console.log(dataFetch)
         
-        setIsFiles(dataFetch.data)
+        //setIsFiles(dataFetch.data)
+        setIsFiles(dataFetch)
     }
     
     useEffect(() => {
@@ -62,9 +94,9 @@ const Files = () =>{
     <h1>Список файлов пользователя</h1>
         <div className="content-header">
             <div className="content-header-actions">
-                <Link to="#" classNameName="base-button">
+                <Link to="#"  className="base-button">
                     <span>+ Загрузить файл </span>
-                </Link>
+                </Link>                
             </div>
         </div>
         <div className="content">
@@ -81,19 +113,21 @@ const Files = () =>{
                         <div className="file-table__cell">Имя файла</div>
                         <div className="file-table__cell"></div>
                     </div>
-                    {isFiles.map(file => {
-                        return (
-                            <div key={file.file_id}>
+                    {//isFiles?.map(file => {                     
+                       // return (
+                            <div key={isFiles.file_id}>
                                 <div className="file-table__row">
-                            <div className="file-table__cell">{file.file_id}</div>
-                            <div className="file-table__cell">{file.name}</div>
+                            <div className="file-table__cell">{isFiles.file_id}</div>
+                            <div className="file-table__cell">{isFiles.name}</div>
                             <div className="file-table__cell">
-                                <button className="icon-button">
+                                <button                                                               
+                                className="icon-button">                              
+                                    
                                     <img src={imageDownload} alt="icon"/>
                                 </button>
                                 <button
                                 onClick={() => 
-                                    navigate('/edit/' + file.file_id + '/' + file.name)
+                                    navigate('/edit/' + isFiles.file_id + '/' + isFiles.name)
                                 }
                                 className="icon-button icon-button--secondary">
                                     <img src={imageEdit} alt="icon"/>
@@ -103,7 +137,7 @@ const Files = () =>{
                                 </button>
                                 <button 
                                 onClick={element => 
-                                    destroyFile(element, file.file_id)    
+                                    destroyFile(element, isFiles.file_id)    
                                 }
                                 className="icon-button icon-button--delete">
                                     <img src={imageDelete} alt="icon"/>
@@ -111,8 +145,9 @@ const Files = () =>{
                             </div>
                                 </div>
                             </div>
-                        )
-                    } )}
+                       // )
+                  //  } )
+                  }
                     
                 </div>
             </div>
