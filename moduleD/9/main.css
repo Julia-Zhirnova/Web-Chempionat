@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    width: 400px;
+    height: 400px;
+
+    position: absolute;
+
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: hsl(351, 100%, 88%);
+    transition: 200ms;
+
+    font-size: 42px;
+    color: hsl(0, 0%, 100%);
+}

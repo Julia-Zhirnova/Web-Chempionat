@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Task 7</title>
+</head>
+<body>
+    <div class='mouse-parallax'>
+        <div class="left-curtain"></div>
+        <div class="right-curtain"></div>
+        <div class="chandelier"></div>
+    </div>
+
+    <script>
+        let left_curtain = document.querySelector('.left-curtain')
+        let right_curtain = document.querySelector('.right-curtain')
+        let chandelier = document.querySelector('.chandelier')
+        
+        window.addEventListener('mousemove', function (element) {
+            let x = element.clientX / window.innerWidth
+            let y = element.clientY / window.innerHeight
+            
+            chandelier.style.transform = `rotate(${Math.sin(x * 10) * 10}deg)`
+            left_curtain.style.transform = `translateX(-${x * 100}px) rotate(${x * 10}deg)`
+            right_curtain.style.transform = `translateX(${x * 100}px) rotate(-${x * 10}deg)`
+        })
+    </script>
+</body>
+</html>

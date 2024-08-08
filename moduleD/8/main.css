@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+}
+canvas {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid #d3d3d3;
+    background-color: #00acec;
+    border-radius: 50%;
+}

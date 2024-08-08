@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.mouse-parallax {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    perspective: 1px;
+    background-image: url('images/cena.jpg');
+    background-size: cover;
+}
+
+.chandelier {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("images/сhandelier.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+
+    transition: all 0.2s ease;
+    
+    transform: translateZ(0px);
+    transform-origin: center 0;
+}
+
+.left-curtain {
+    width: 110%;
+    height: 100%;
+
+    position: absolute;
+    
+    background-image: url('images/curtain_left.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    
+    background-size: contain;
+    
+    transition: all 0.2s ease;
+
+    transform: translateZ(0px);
+    transform-origin: center 0;
+}
+
+.right-curtain {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    
+    background-image: url('images/curtain_right.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    transition: all 0.2s ease;
+    
+    transform-origin: center 0;
+}
